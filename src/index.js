@@ -13,7 +13,7 @@ const spaceUtilities = require('./spaceUtilities');
 const divideUtilities = require('./divideUtilities');
 const bgGradientUtilities = require('./bgGradientUtilities');
 
-module.exports = plugin(({ addUtilities, theme, variants }) => {
+module.exports = plugin(({ addUtilities, matchUtilities, theme, variants }) => {
     addUtilities(paddingUtilities(theme), variants('padding'));
     addUtilities(marginUtilities(theme), variants('margin'));
     addUtilities(insetUtilities(theme), variants('inset'));
@@ -26,4 +26,17 @@ module.exports = plugin(({ addUtilities, theme, variants }) => {
     addUtilities(spaceUtilities(theme), variants('space'));
     addUtilities(divideUtilities(theme), variants('divide'));
     addUtilities(bgGradientUtilities(theme), variants('bgGradient'));
+
+    matchUtilities(
+        {
+            ps: value => ({
+                paddingInlineStart: value,
+            }),
+
+            pe: value => ({
+                paddingInlineEnd: value,
+            }),
+        },
+        // { values: theme('paddingInlineStart', 'paddingInlineEnd') }
+    );
 });

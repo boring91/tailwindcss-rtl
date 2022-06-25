@@ -1,6 +1,6 @@
 {
   "name": "mnm-tailwindcss-rtl",
-  "version": "0.9.1",
+  "version": "0.9.9",
   "main": "src/index.js",
   "repository": "https://github.com/20lives/tailwindcss-rtl",
   "scripts": {
@@ -17,6 +17,6 @@
   "license": "MIT",
   "private": false,
   "devDependencies": {
-    "tailwindcss": "^1.9.6"
+    "tailwindcss": "^3.1.4"
   }
 }
